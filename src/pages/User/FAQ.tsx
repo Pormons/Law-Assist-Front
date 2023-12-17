@@ -146,7 +146,7 @@ export default function FAQ() {
               className={
                 !chat || disable
                   ? "hover:border-none border-none text-gray dark:text-white"
-                  : "hover:text-maroon hover:border-none border-none dark:text-white"
+                  : "hover:text-maroon hover:border-none border-none dark:text-white cursor-pointer"
               }
             >
               {disable ? (

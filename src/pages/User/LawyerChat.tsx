@@ -146,23 +146,6 @@ export default function LawyerChat() {
             </Show>
           </div>
           <div className="dark:bg-darkcard flex flex-row h-[10%] border-t-2 justify-center items-center w-full gap-2 p-1">
-            <button className="hover:bg-maroon dark:text-white hover:text-white hover:border-none border-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"
-                />
-              </svg>
-              {/* <SpeechToText /> */}
-            </button>
             <input
               onInput={(e) => {
                 setMessage(e.currentTarget.value);
@@ -182,8 +165,8 @@ export default function LawyerChat() {
               type="button"
               className={
                 !chat || disable
-                  ? "hover:border-none border-none text-gray dark:text-white"
-                  : "hover:text-maroon hover:border-none border-none dark:text-white"
+                  ? "hover:border-none border-none text-gray dark:text-white cursor-pointer"
+                  : "hover:text-maroon hover:border-none border-none cursor-pointer dark:text-white"
               }
             >
               {disable ? (
@@ -198,7 +181,7 @@ export default function LawyerChat() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="w-6 h-6"
+                  className="w-7 h-7"
                 >
                   <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
                 </svg>
