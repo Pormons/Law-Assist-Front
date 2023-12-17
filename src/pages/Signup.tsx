@@ -40,8 +40,8 @@ export default function Signup() {
       const data = await signup(Formdata); // Variable named 'data'
       console.log("Login successful:", data);
       sessionStorage.setItem("token", data.token);
-      toast.success("Successfully Created");
       navigate("/Login");
+      toast.success("Successfully Created");
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -132,7 +132,7 @@ export default function Signup() {
             <input
               type="submit"
               value={"Login"}
-              className="bg-maroon rounded-xl text-white w-60 h-[50px]"
+              className="bg-maroon cursor-pointer rounded-xl text-white w-60 h-[50px]"
             />
             <Break />
             <Google>Signup</Google>

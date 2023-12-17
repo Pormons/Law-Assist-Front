@@ -77,7 +77,7 @@ export default function Login() {
             <input
               type="submit"
               value={"Login"}
-              className="bg-maroon w-52 h-11 text-white flex font-extrabold items-center justify-center rounded-lg hover:shadow-xl hover:border-black hover:border-2"
+              className="bg-maroon cursor-pointer w-52 h-11 text-white flex font-extrabold items-center justify-center rounded-lg hover:shadow-xl hover:border-black hover:border-2"
               style={{ color: "white" }}
             />
 
