@@ -1,0 +1,55 @@
+
+.custom-lawyer{
+    margin-top: 6%;
+    margin-left: 28%; 
+}
+.custom-button-width {
+    width: 190px; /* Set your desired width here */
+    height: 40px;
+    background-color: #9F2E57;
+    border: 2px solid transparent; /* Initially transparent border */
+    transition: background-color 0.3s, border-color 0.3s; /* Add a smooth transition effect */
+    padding-bottom: 35px;
+  }
+  
+  .custom-button-width:hover{
+    background-color: white; /* Button background turns white on hover */
+    border-color: #9F2E57; /* Border color changes to #9F2E57 on hover */
+    color: #9F2E57;
+  }
+
+  .table{
+
+    margin-top:-20%;
+    
+  }
+
+  .container{
+    width: 80%;
+    margin-left: 17%;
+    margin-top:-20%;
+  }
+
+  .search-custom{
+    margin-left: 20%;
+  }
+
+  .add-lawyer {
+    background-color: #9F2E57;
+    margin-right: 40%;
+    border: 1px solid transparent; /* Add a default transparent border */
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    margin-left: 25%;
+    width:50%;
+  }
+  
+  .add-lawyer:hover {
+    background-color: white;
+    border-color: #9F2E57; /* Change border color on hover */
+    color: #9F2E57;
+  }
+  
+ 
+  
