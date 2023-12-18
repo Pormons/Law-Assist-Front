@@ -18,7 +18,7 @@ export default function LawyerChat() {
 
   const sendChat = async () => {
     const newMessage = {
-      id: 1, // or some unique identifier
+      id: 1,
       bot: false,
       message: message,
     };
@@ -28,18 +28,21 @@ export default function LawyerChat() {
     const token = sessionStorage.getItem("token");
     setTyping(false);
 
-    const response = await fetch(`https://law-backend.up.railway.app/api/LawyerChat`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        chat: message,
-        chatId: null,
-      }),
-    });
+    const response = await fetch(
+      `https://law-backend.up.railway.app/api/LawyerChat`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          chat: message,
+          chatId: null,
+        }),
+      }
+    );
 
     const data = await response.json();
     console.log(data);
@@ -84,10 +87,10 @@ export default function LawyerChat() {
         >
           <div className="bg-maroon h-[13%] space-x-5 flex flex-row justify-start items-center p-4 text-white">
             <a href={`/Home/Lawyers/${lawyer.id}`}>
-            <FontAwesomeIcon
-              icon={faChevronLeft}
-              className="w-7 h-7 p-2 hover:text-black hover:shadow-lg rounded-full"
-            />
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                className="w-7 h-7 p-2 hover:text-black hover:shadow-lg rounded-full"
+              />
             </a>
             <FontAwesomeIcon
               icon={faUser}
@@ -107,9 +110,12 @@ export default function LawyerChat() {
                   key={data.id}
                   className="p-4 flex text-justify space-x-2 items-center font-semibold"
                 >
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="w-10 h-10 border p-2 rounded-full"
+                  />
                   <div className="bg-gray text-[30px] h-full flex p-2 rounded-br-xl rounded-t-xl">
-                    {data.message}{" "}
-                    {/* Use the actual field name from your API response */}
+                    {data.message}
                   </div>
                 </div>
               ) : (
@@ -122,8 +128,7 @@ export default function LawyerChat() {
                     className="w-10 h-10 border p-2 rounded-full"
                   />
                   <div className="bg-maroon text-white text-[30px] h-full flex p-2 rounded-bl-xl rounded-tl-xl rounded-tr-xl">
-                    {data.message}{" "}
-                    {/* Use the actual field name from your API response */}
+                    {data.message}
                   </div>
                 </div>
               )
@@ -150,6 +155,12 @@ export default function LawyerChat() {
               onInput={(e) => {
                 setMessage(e.currentTarget.value);
               }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  sendChat();
+                }
+              }}
               value={message}
               type="text"
               className="w-[90%] dark:bg-darkside dark:text-white border-2 p-2 rounded h-12"
@@ -159,7 +170,7 @@ export default function LawyerChat() {
             />
             <button
               disabled={!message || disable}
-              onClick={(e) => {
+              onClick={() => {
                 sendChat();
               }}
               type="button"

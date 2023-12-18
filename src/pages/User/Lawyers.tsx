@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LawyerCard from "../../components/LawyerCard";
 import Show from "../../components/other/Show";
 import { fetchLawyer } from "../../api/UserApi";

@@ -1,38 +1,18 @@
 import Show from "../../components/other/Show";
 import ReactLoading from "react-loading";
-import { useEffect, useRef, useState } from "react";
-import ProfileModal from "../../components/ProfileModal";
+import { useEffect, useState } from "react";
 import Switcher from "../../components/other/Switcher";
-import { loggedIn } from "../../api/AdminApi";
 
 export default function Settings() {
   const [loading, setLoading] = useState<boolean>(false);
-  const [user, setUser] = useState([]);
-
-  const fetchUser = async () => {
-    setLoading(true);
-    try {
-      const data = await loggedIn();
-      setUser(data);
-      console.log(data);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
 
   useEffect(() => {
-    fetchUser();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
   }, []);
-
-  const fileInputRef = useRef(null);
-
-  const handleEditClick = () => {
-    // Trigger the click event of the file input when "Edit" is clicked
-    fileInputRef.current.click();
-  };
-
+  
   return (
     <>
       <div className="flex flex-col h-screen w-full p-5 md:px-20 md:py-10 dark:bg-dark dark:text-white">
@@ -53,9 +33,7 @@ export default function Settings() {
           }
         >
             <div className="h-full rounded-lg w-[30%] flex flex-col gap-4">
-              {/* Card 1 */}
               <div className="border bg-gray-200 p-4 rounded-lg">
-                {/* Dark Mode Switcher */}
                 <div className="mb-4">
                   <label
                     htmlFor="darkMode"
@@ -66,7 +44,6 @@ export default function Settings() {
                   <Switcher id="darkMode" />
                 </div>
 
-                {/* Language dropdown */}
                 <div className="mb-4">
                   <label
                     htmlFor="language"
@@ -81,11 +58,9 @@ export default function Settings() {
                   >
                     <option value="english">English</option>
                     <option value="spanish">Spanish</option>
-                    {/* Add more language options as needed */}
                   </select>
                 </div>
 
-                {/* Font dropdown */}
                 <div className="mb-4">
                   <label
                     htmlFor="font"
@@ -100,7 +75,6 @@ export default function Settings() {
                   >
                     <option value="arial">Arial</option>
                     <option value="times-new-roman">Times New Roman</option>
-                    {/* Add more font options as needed */}
                   </select>
                 </div>
               </div>

@@ -1,24 +1,20 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import Show from "../../components/other/Show";
 import ReactLoading from "react-loading";
 import "leaflet/dist/leaflet.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faUser } from "@fortawesome/free-solid-svg-icons";
-import { fetchLawyerInfo } from "../../api/UserApi";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function FAQ() {
-  const { id } = useParams();
   const [disable, setDisable] = useState<boolean>(false);
   const [loading, setloading] = useState<boolean>(false);
   const [typing, setTyping] = useState<boolean>(true);
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
-  const [lawyer, setLawyer] = useState([]);
 
   const sendChat = async () => {
     const newMessage = {
-      id: 1, // or some unique identifier
+      id: 1,
       bot: false,
       message: message,
     };

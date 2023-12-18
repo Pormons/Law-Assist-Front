@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import map from "../../assets/fakemap.png";
 import { fetchLawyerInfo } from "../../api/UserApi";
 import Show from "../../components/other/Show";
 import ReactLoading from "react-loading";

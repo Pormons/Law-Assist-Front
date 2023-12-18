@@ -39,7 +39,7 @@ export const logout = async () => {
     });
 
     if (!response.ok) {
-        throw new Error(`Login failed with status ${response.status}`);
+        throw new Error(`Signup failed with status ${response.status}`);
     }
 
     const data = await response.json();
@@ -60,7 +60,7 @@ export const signup = async (body: create) => {
     });
 
     if (!response.ok) {
-        throw new Error(`Login failed with status ${response.status}`);
+        throw new Error(`Signup failed with status ${response.status}`);
     }
 
     const data = await response.json();
