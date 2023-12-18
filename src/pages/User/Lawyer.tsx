@@ -67,7 +67,7 @@ export default function Lawyer() {
                 </div>
 
                 
-                <div className="text-base w-[40%] space-y-2 mb-4 flex flex-col items-center text-gray-700">
+                <div className="text-base w-[40%] space-y-2 dark:text-white mb-4 flex flex-col items-center text-gray-700">
                   <p>
                     <strong>Atty:</strong> {lawyer.name}
                   </p>

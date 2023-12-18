@@ -31,8 +31,8 @@ export default function LawyerCard(props) {
 
       <div className="flex flex-col justify-center ml-4">
         <span className="font-bold text-xl dark:text-white text-black">{props.lawyer.name}</span>
-        <span className=" text-gray-800">{props.lawyer.address}, {props.lawyer.region}</span>
-        <span className="text-gray-800">{props.lawyer.email}</span>
+        <span className=" text-gray-800 dark:text-white">{props.lawyer.address}, {props.lawyer.region}</span>
+        <span className="text-gray-800 dark:text-white">{props.lawyer.email}</span>
       </div>
     </div>
   );
