@@ -84,7 +84,7 @@ export default function FAQ() {
                   icon={faUser}
                   className="w-10 h-10 border p-2 rounded-full"
                 />
-                  <div className=" bg-gray-500 text-[30px] h-full flex p-2 rounded-br-xl rounded-t-xl">
+                  <div className=" bg-gray-500 text-white text-[30px] h-full flex p-2 rounded-br-xl rounded-t-xl">
                     {data.message}
                   </div>
                 </div>
@@ -110,7 +110,7 @@ export default function FAQ() {
                   icon={faUser}
                   className="w-10 h-10 border p-2 rounded-full"
                 />
-                <div className="bg-gray-500 text-[30px] h-full flex p-2 rounded-br-xl rounded-t-xl">
+                <div className="bg-gray-500 text-white text-[30px] h-full flex p-2 rounded-br-xl rounded-t-xl">
                   <ReactLoading
                     type="bubbles"
                     color="#6A0A2D"

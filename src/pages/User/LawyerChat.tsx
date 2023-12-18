@@ -114,7 +114,7 @@ export default function LawyerChat() {
                     icon={faUser}
                     className="w-10 h-10 border p-2 rounded-full"
                   />
-                  <div className="bg-gray text-[30px] h-full flex p-2 rounded-br-xl rounded-t-xl">
+                  <div className=" bg-gray-500 text-white text-[30px] h-full flex p-2 rounded-br-xl rounded-t-xl">
                     {data.message}
                   </div>
                 </div>
